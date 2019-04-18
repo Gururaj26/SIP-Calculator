@@ -1,0 +1,17 @@
+{
+  "name": "sip-calculator",
+  "version": "1.0.0",
+  "description": "This will let you calculate your long term corpus amount with yearly increment you might want to see in your investments",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "sip",
+    "investment",
+    "opensource"
+  ],
+  "author": "Gururaj Dharani",
+  "license": "MIT"
+}
