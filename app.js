@@ -31,7 +31,7 @@ function writeCalculationToFile(updatedInvestmentObj){
       if(err) {
           return console.log(err);
       }
-      console.log("The file was saved!");
+      console.log("Investment calculations have been written to a file calculation.md");
   });
 }
 
