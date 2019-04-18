@@ -9,3 +9,12 @@ Open up app.js and change values in `investmentObj` and do `npm app.js` the calc
 | Monthly Investment | Investment Term | Assumed Interest | Total Amount Invested in the term | + Gains | Total Accumulation |
 | ------------------ | :-------------: | :--------------: | :-------------------------------: | :-----: | ---------------: |
 | 3000               |        12       |       13.14      |               36,000              |  4,730  |           40,730 |
+
+
+##### Roadmap
+
+1. Support longterm investment plans and calculate increasing investment amount.
+2. Interactive Questions on CLI for better experience.
+
+
+Ideas and Pull Requests are most welcome.
