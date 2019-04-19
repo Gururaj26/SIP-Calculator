@@ -1,4 +1,4 @@
-### SIP Calculator
+# SIP Calculator
 
 Use this to understand your investment goals and calculate profits and annual corpus.
 
