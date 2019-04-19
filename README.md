@@ -4,7 +4,14 @@ Use this to understand your investment goals and calculate profits and annual co
 
 -   Just not think about investment, Do it !
 
-Open up app.js and change values in `investmentObj` and do `node app.js` the calculations will be written to a markdown file. Below is the sample.
+##### How Should you run this.
+
+1. update the values according to your plan in app.js
+2. Run the app on CLI
+```
+node app.js
+```
+3. Find the calculated file in the source of this app to clarify your investment plans for longterm.
 
 | Age | Amount increased | Monthly Investment | Investment Term | Assumed Interest |  Total Amount Invested in the term  | + Gains  | + Previous year's Accumulation  | Total Accumulation  |
 | ------------ |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|---------:|
