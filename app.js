@@ -6,34 +6,36 @@ const investmentObj = {
   interestRate: 13.14,
   investmentTerm: 25,
   currentAge: 25,
-  annualIncrement: 2000
+  annualIncrement: 2000,
+  currency: 'INR'
 }
 
 function calculateSip() {
-  let carryForwardAmount;
+  let carryForwardAmount = 0;
   let updatedInvestmentObj;
   let totalInvestment;
   let investmentArr = [];
   for (i = 1; i <= investmentObj.investmentTerm; i++) {
     if (investmentObj.annualIncrement && (i > 1)) {
       investmentObj.currentInvestment = investmentObj.currentInvestment + investmentObj.annualIncrement;
-      totalInvestment = (investmentObj.currentInvestment * 12) + carryForwardAmount;
+      totalInvestment = investmentObj.currentInvestment * 12
     } else {
       totalInvestment = investmentObj.currentInvestment * convertToMonths(i);
     }
     const interestEarned = Math.floor((totalInvestment * investmentObj.interestRate) / 100);
-    const yearEndAccumulation = totalInvestment + interestEarned;
-    carryForwardAmount = yearEndAccumulation;
+    const yearEndAccumulation = totalInvestment + interestEarned + carryForwardAmount;
     investmentObj.currentAge = i > 1 ? (investmentObj.currentAge + 1) : investmentObj.currentAge;
     updatedInvestmentObj = {
       ...investmentObj,
       term: i,
       totalInvestment: putCommas(totalInvestment),
       interestEarned: putCommas(interestEarned),
+      carryForwardAmount: putCommas(carryForwardAmount),
       corpusWithCAGR: putCommas(yearEndAccumulation),
       age: investmentObj.currentAge
     }
     investmentArr.push(updatedInvestmentObj);
+    carryForwardAmount = yearEndAccumulation;
   }
   constructTableBody(investmentArr);
 }
@@ -59,7 +61,7 @@ function writeToFile(tableBody){
 function constructTableBody(investmentArr) {
   let tableBody = [];
   investmentArr.map((x, i) => {
-    tableBody.push(`\n | ${x.age} | ${x.annualIncrement} | ${x.currentInvestment} | ${x.term} | ${x.interestRate} | ${x.totalInvestment} | ${x.interestEarned} | ${x.corpusWithCAGR} |`)
+    tableBody.push(`\n | ${x.age} | ${x.annualIncrement} | ${x.currentInvestment} | ${x.term} | ${x.interestRate} | ${x.totalInvestment} | ${x.interestEarned} | ${x.carryForwardAmount} | ${x.corpusWithCAGR} |`)
   })
   const fullTable = tableHeader.concat(tableBody.join(' '));
   writeToFile(fullTable);
