@@ -2,9 +2,9 @@
 
 Use this to understand your investment goals and calculate profits and annual corpus.
 
--   Just not think about investment, Do it !
+`Just not think about investment, Do it ! 🏍️`
 
-##### How Should you run this.
+### How Should you run this.
 
 1. update the values according to your plan in app.js
 2. Run the app on CLI
@@ -41,7 +41,7 @@ node app.js
  | 48 | 2000 | 49000 | 24 | 13.14 | 588,000 | 77,263 | 7,806,651 | 8,471,914 |
  | 49 | 2000 | 51000 | 25 | 13.14 | 612,000 | 80,416 | 8,471,914 | 9,164,330 |
 
-##### Roadmap
+### Roadmap
 
 1. Support longterm investment plans and calculate increasing investment amount.
 2. Interactive Questions on CLI for better experience.
