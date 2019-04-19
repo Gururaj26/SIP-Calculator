@@ -1,5 +1,9 @@
 # SIP Calculator
 
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+
 Use this to understand your investment goals and calculate profits and annual corpus.
 
 `Just not think about investment, Do it ! 🏍️`
