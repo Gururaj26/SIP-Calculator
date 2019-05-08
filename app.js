@@ -28,16 +28,22 @@ function calculateSip() {
     updatedInvestmentObj = {
       ...investmentObj,
       term: i,
-      totalInvestment: putCommas(totalInvestment),
-      interestEarned: putCommas(interestEarned),
-      carryForwardAmount: putCommas(carryForwardAmount),
-      corpusWithCAGR: putCommas(yearEndAccumulation),
+      totalInvestment: totalInvestment,
+      interestEarned: interestEarned,
+      carryForwardAmount: carryForwardAmount,
+      corpusWithCAGR: yearEndAccumulation,
       age: investmentObj.currentAge
     }
     investmentArr.push(updatedInvestmentObj);
     carryForwardAmount = yearEndAccumulation;
   }
   constructTableBody(investmentArr);
+}
+
+function getUnit(value){
+  let leng = value.toString().length;
+  let unit = leng == 6 ? ' lakh' : leng == 7 ? ' lakh': leng == 8 ? 'Cr' : leng == 9 ? 'Cr' : ''
+  return `${putCommas(value) + unit}`
 }
 
 function convertToMonths(years) {
@@ -61,7 +67,7 @@ function writeToFile(tableBody){
 function constructTableBody(investmentArr) {
   let tableBody = [];
   investmentArr.map((x, i) => {
-    tableBody.push(`\n | ${x.age} | ${x.annualIncrement} | ${x.currentInvestment} | ${x.term} | ${x.interestRate} | ${x.totalInvestment} | ${x.interestEarned} | ${x.carryForwardAmount} | ${x.corpusWithCAGR} |`)
+    tableBody.push(`\n | ${x.term} | ${x.age} | ${getUnit(x.carryForwardAmount)} | ${putCommas(x.currentInvestment)} | ${x.interestRate} | ${getUnit(x.corpusWithCAGR)} | ${x.annualIncrement} |`)
   })
   const fullTable = tableHeader.concat(tableBody.join(' '));
   writeToFile(fullTable);

@@ -1,5 +1,5 @@
-const tableHeader = `| Age | Amount increased | Monthly Investment | Investment Term | Assumed Interest |  Total Amount Invested in the term  | + Gains  | + Previous year's Accumulation  | Total Accumulation  |
-| ------------ |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|---------:|`
+const tableHeader = `| Year | Age | Opening Balance |  Investment (monthly) | Interest (%) |  Closing Balance  | Yearly Increment |
+| ------------ |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|`
 
 
 module.exports = {
