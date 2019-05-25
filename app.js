@@ -16,7 +16,6 @@ function calculateSip() {
   let totalInvestment;
   let investmentArr = [];
   for (i = 1; i <= investmentObj.investmentTerm; i++) {
-    // if(i == 1) investmentObj.annualIncrement = 0;
     if (investmentObj.annualIncrement && (i > 1)) {
       investmentObj.currentInvestment = investmentObj.currentInvestment + investmentObj.annualIncrement;
       totalInvestment = investmentObj.currentInvestment * 12
