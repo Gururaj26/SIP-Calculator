@@ -18,6 +18,7 @@ node app.js
 3. Find the calculated file in the source of this app to clarify your investment plans for longterm.
 
 | Year | Age | Opening Balance |  Investment (monthly) | Interest (%) | Total Invested | Interest Earned | Closing Balance  | Yearly Increment |
+
 |:------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
  | 1 | 25 | 0 | 3,000 | 13.14 | 36,000 | +4,730 | 40,730 | 2000 |
  | 2 | 26 | 40,730 | 5,000 | 13.14 | 60,000 | +13,235 | 113,965 lakh | 2000 |
