@@ -22,7 +22,7 @@ function calculateSip() {
     } else {
       totalInvestment = investmentObj.currentInvestment * convertToMonths(i);
     }
-    const interestEarned = Math.floor((totalInvestment * investmentObj.interestRate) / 100);
+    const interestEarned = Math.floor((carryForwardAmount + totalInvestment) * investmentObj.interestRate / 100);
     const yearEndAccumulation = totalInvestment + interestEarned + carryForwardAmount;
     investmentObj.currentAge = i > 1 ? (investmentObj.currentAge + 1) : investmentObj.currentAge;
     updatedInvestmentObj = {
@@ -60,14 +60,14 @@ function writeToFile(tableBody){
     if (err) {
       return console.log(err);
     }
-    console.log(`Congratulations !!`);
+    console.log(`Investment calculated`);
   });
 }
 
 function constructTableBody(investmentArr) {
   let tableBody = [];
   investmentArr.map((x, i) => {
-    tableBody.push(`\n | ${x.term} | ${x.age} | ${getUnit(x.carryForwardAmount)} | ${putCommas(x.currentInvestment)} | ${x.interestRate} | ${getUnit(x.corpusWithCAGR)} | ${x.annualIncrement} |`)
+    tableBody.push(`\n | ${x.term} | ${x.age} | ${getUnit(x.carryForwardAmount)} | ${putCommas(x.currentInvestment)} | ${x.interestRate} | ${getUnit(x.totalInvestment)} | ${'+' + getUnit(x.interestEarned)} | ${getUnit(x.corpusWithCAGR)} | ${x.annualIncrement} |`)
   })
   const fullTable = tableHeader.concat(tableBody.join(' '));
   writeToFile(fullTable);
