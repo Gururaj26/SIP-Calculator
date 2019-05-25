@@ -6,7 +6,7 @@ const investmentObj = {
   interestRate: 13.14,
   investmentTerm: 25,
   currentAge: 25,
-  annualIncrement: 2000,
+  annualIncrement: 1000,
   currency: 'INR'
 }
 
