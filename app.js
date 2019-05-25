@@ -16,6 +16,7 @@ function calculateSip() {
   let totalInvestment;
   let investmentArr = [];
   for (i = 1; i <= investmentObj.investmentTerm; i++) {
+    // if(i == 1) investmentObj.annualIncrement = 0;
     if (investmentObj.annualIncrement && (i > 1)) {
       investmentObj.currentInvestment = investmentObj.currentInvestment + investmentObj.annualIncrement;
       totalInvestment = investmentObj.currentInvestment * 12
@@ -67,7 +68,7 @@ function writeToFile(tableBody){
 function constructTableBody(investmentArr) {
   let tableBody = [];
   investmentArr.map((x, i) => {
-    tableBody.push(`\n | ${x.term} | ${x.age} | ${getUnit(x.carryForwardAmount)} | ${putCommas(x.currentInvestment)} | ${x.interestRate} | ${getUnit(x.totalInvestment)} | ${'+' + getUnit(x.interestEarned)} | ${getUnit(x.corpusWithCAGR)} | ${x.annualIncrement} |`)
+    tableBody.push(`\n | ${x.term} | ${x.age} | ${getUnit(x.carryForwardAmount)} | ${putCommas(x.currentInvestment)} | ${x.interestRate} | ${getUnit(x.totalInvestment)} | ${'+' + getUnit(x.interestEarned)} | ${getUnit(x.corpusWithCAGR)} | ${(x.term > 1) ? x.annualIncrement : 0} |`)
   })
   const fullTable = tableHeader.concat(tableBody.join(' '));
   writeToFile(fullTable);
